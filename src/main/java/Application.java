@@ -10,7 +10,7 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) throws SQLException {
         final String user = "postgres";
-        final String password = "12345";
+        final String password = "161092";
         final String url = "jdbc:postgresql://localhost:5432/skypro";
 
         try (final Connection connection = DriverManager.getConnection(url, user, password);
@@ -32,14 +32,14 @@ public class Application {
         try (final Connection connection = DriverManager.getConnection(url, user, password)) {
             EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
 
-            employeeDAO.create(new Employee("Serge", "Snow", "male", 35, new City(2, "Moscow")));
+            employeeDAO.create(new Employee("Иван", "Иванченко", "male", 35, new City(2, "Москва")));
 
             System.out.println(employeeDAO.readById(4));
 
             List<Employee> employeeList = new ArrayList<>(employeeDAO.readAll());
             employeeList.forEach(System.out::println);
 
-            employeeDAO.updateEmployeeById(8, "Andrey", "Petrov", "male", 40, 1);
+            employeeDAO.updateEmployeeById(8, "Кирилл", "Васин", "male", 40, 1);
 
             employeeDAO.deleteEmployeeById(8);
         }
