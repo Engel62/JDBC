@@ -13,7 +13,7 @@ public class City {
     private int id;
     @Column(name = "city_name", nullable = false)
     private String name;
-    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Employee> employeeList;
     public City() {
     }
