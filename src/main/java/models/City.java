@@ -41,6 +41,14 @@ public class City {
         this.name = name;
     }
 
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
